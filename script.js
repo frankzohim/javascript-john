@@ -133,7 +133,7 @@ console.log(whatDoYouDo("Engineer", "Frank"));*/
  *
  * */
 
-var names = ["Frank", "Camille", "Mael", "Emerick"];
+/*var names = ["Frank", "Camille", "Mael", "Emerick"];
 console.log(names);
 names.push("Merlin");
 names.unshift("Leo");
@@ -147,4 +147,23 @@ var calculteAge = function (birthYear) {
   return 2023 - birthYear;
 };
 var randomData = [true, "Hello World", 14, null, undefined, calculteAge(2005)];
-console.log(randomData);
+console.log(randomData);*/
+
+/******************************
+ * Objects & properties
+ *
+ * */
+var person = {
+  firstName: "Frank",
+  birthYear: 1991,
+  job: "Engineer",
+  isMarried: true,
+  childreen: ["Melkisedek", "Michael"],
+  calculateAge: function (birthYear) {
+    return 2023 - birthYear;
+  },
+};
+
+person.job = "CEO";
+//console.log(person);
+console.log(person.calculateAge(1991));
