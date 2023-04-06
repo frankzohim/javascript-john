@@ -153,7 +153,7 @@ console.log(randomData);*/
  * Objects & properties
  *
  * */
-var person = {
+/*var person = {
   firstName: "Frank",
   birthYear: 1991,
   job: "Engineer",
@@ -166,4 +166,8 @@ var person = {
 
 person.job = "CEO";
 //console.log(person);
-console.log(person.calculateAge(1991));
+console.log(person.calculateAge(1991));*/
+/******************************
+ * Loops & Iterationss
+ *
+ * */
