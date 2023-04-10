@@ -171,3 +171,33 @@ console.log(person.calculateAge(1991));*/
  * Loops & Iterationss
  *
  * */
+
+/******************************
+ * this keyword
+ *
+ * */
+//console.log(this);
+
+var frank = {
+  fullName: "Fofe Zohim Franklin",
+  birthYear: 1991,
+  calculateAge: function () {
+    console.log(this);
+    console.log(2016 - this.birthYear);
+    /*function innerFunction() {
+      console.log(this);
+    }
+    innerFunction();*/
+  },
+};
+frank.calculateAge();
+
+var mike = {
+  name: "Mike",
+  birthYear: 1984,
+};
+
+mike.calculateAge = frank.calculateAge;
+mike.calculateAge();
+
+var age = 140;
