@@ -7,18 +7,20 @@ var age = 32;
 var fullAge = true;
 var job;
 var $djbv = 125;
+console.log(job);
 console.log(firstName);
 console.log(age);
 console.log(fullAge);*/
 
 /******************************
- * Variable mutation & type coercion
- 
-var firstName = "Frank Zohim";
-var age = "32";
+ Variable mutation & type coercion*/
+
+/*var firstName = "Frank Zohim";
+var age = 32;
 
 //Type coercion
 console.log(firstName + " " + age);
+console.log(age);
 var numberOne = 12;
 var numberTwo = "14";
 var numberThree = numberOne - numberTwo;
@@ -44,19 +46,19 @@ console.log(spouseName);*/
 /******************************
  * Basics Operators
  *
- * 
+ */
 var frankYear = 31;
 var donaldYear = 38;
 console.log(typeof frankYear);
 console.log(donaldYear < frankYear);
 console.log(donaldYear > frankYear);
-console.log(typeof (frankYear == donaldYear));*/
+console.log(typeof (frankYear == donaldYear));
 
 /******************************
  * Operators precedence
  *
  * */
-/*var now = 2018;
+var now = 2018;
 var frankYear = 1991;
 var fullAge = 18;
 var isFullAge = now - frankYear >= fullAge;
@@ -73,7 +75,7 @@ var z = ((14 * 12) / 2) % 2;
 var k = 14 + 25 / 10;
 console.log(k);
 x--;
-console.log(x);*/
+console.log(x);
 
 /******************************
  * Boolean Logic
