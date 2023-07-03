@@ -27,68 +27,83 @@ jane.calculateAge();
 console.log(mike.lastName);
 console.log(jane.lastName);
 console.log(aicha.lastName);*/
-//IIFE
 
-/*function games() {
-  var score = Math.floor(Math.random() * 10);
-  console.log(score > 5);
+//Object.create
+/*
+var personProto = {
+    calculateAge: function(){
+        console.log(2023-this.yearOfBirth);
+    }
 }
 
-(function (goodLuck) {
-  var score = Math.floor(Math.random() * 10);
-  console.log(score > 5 - goodLuck);
-})(10);*/
+var john = Object.create(personProto);
+john.name = "John";
+john.yearOfBirth = 2000;
+john.job   = "teacher";
 
-//Bind, call & apply methods
+var jane = Object.create(personProto, {
+    name : { value: "John"},
+    yearOfBirth: {value: 2000},
+    job: {value: "teacher"}
+});*/
+
+// Primitives Vs Objects
+
+//Primitives
+var a = 15;
+var b = a;
+a = 26;
+console.log(a, b);
+
 var john = {
   name: "John",
-  age: 28,
+  yearOfBirth: 1991,
   job: "Engineer",
-  presentation: function (style, timeOfDay) {
-    if (style === "formal") {
-      console.log(
-        "Good " +
-          timeOfDay +
-          " My name is " +
-          this.name +
-          " I'm a " +
-          this.job +
-          " and i'm " +
-          this.age
-      );
-    } else if (style === "friendly") {
-      console.log(
-        "Hey what's up? " +
-          " I'm " +
-          this.name +
-          " I'm a " +
-          this.job +
-          " I'am " +
-          this.age +
-          " have a nice " +
-          timeOfDay
-      );
-    }
-  },
 };
 
-var emily = {
-  name: "Emily",
-  age: 25,
-  job: "Designer",
-};
-/*emily.presentation = john.presentation;
-emily.presentation("friendly", "evening");*/
+//Objects
+var jane = john;
+jane.name = "Jane";
+console.log(john);
 
-john.presentation("friendly", "Morning");
-john.presentation.call(emily, "formal", "afternoon");
+//functions
+var age = 27;
 
-//Apply use array
-john.presentation.apply(emily, ["formal", "afternoon"]);
+function change(a, b) {
+  a = 30;
+  b.job = "CEO";
+}
+change(age, john);
+console.log(age, john);
 
-//Bind
-var johnComplete = john.presentation.bind(john, "friendly", "afternoon");
-johnComplete();
+//Passing functions as arguments
 
-var johnFormal = john.presentation.bind(john, "formal");
-johnFormal("morning");
+var years = [1991, 2002, 1998, 2011];
+
+function arrCalc(arr, fn) {
+  var arrResult = [];
+  for (var i = 0; i < arr.length; i++) {
+    arrResult.push(fn(arr[i]));
+  }
+  return arrResult;
+}
+
+function calculateAge(year) {
+  return 2023 - year;
+}
+
+function isFullAge(age) {
+  return age >= 18;
+}
+
+function maxHeartRate(age) {
+  return Math.round(206.9 - 0.67 * age);
+}
+
+var ages = arrCalc(years, calculateAge);
+var fullAges = arrCalc(ages, isFullAge);
+console.log(ages, fullAges);
+var heartRates = arrCalc(fullAges, maxHeartRate);
+console.log(heartRates);
+console.log(window.jane);
+window.open("google.com");
