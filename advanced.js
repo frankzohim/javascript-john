@@ -78,7 +78,6 @@ console.log(age, john);
 
 //Passing functions as arguments
 
-
 var years = [1991, 2002, 1998, 2011];
 
 function arrCalc(arr, fn) {
@@ -95,13 +94,10 @@ function calculateAge(year) {
 
 function isFullAge(age) {
   return age >= 18;
-
-
-  
 }
 
 function maxHeartRate(age) {
-  return Math.round(206.9 - (0.67 * age));
+  return Math.round(206.9 - 0.67 * age);
 }
 
 var ages = arrCalc(years, calculateAge);
@@ -110,12 +106,4 @@ console.log(ages, fullAges);
 var heartRates = arrCalc(fullAges, maxHeartRate);
 console.log(heartRates);
 console.log(window.jane);
-window.open( "google.com" )
-var logs = ["error1", "error2", "error3", "error4", "error5"];
-console.log("Hello World");
-
-for ( var i = 0; i < logs.length; i++ ){
-  console.log(logs[i])
-}
-
-console.log("Hello world")
+window.open("google.com");
