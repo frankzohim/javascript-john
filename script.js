@@ -201,3 +201,6 @@ mike.calculateAge = frank.calculateAge;
 mike.calculateAge();
 
 var age = 140;
+
+ 
+console.log(typeof aVariable);

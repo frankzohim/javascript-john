@@ -52,54 +52,57 @@ var jane = Object.create(personProto, {
 //Primitives
 var a = 15;
 var b = a;
- a = 26;
- console.log(a,b);
+a = 26;
+console.log(a, b);
 
- var john = {
+var john = {
   name: "John",
   yearOfBirth: 1991,
   job: "Engineer",
- }
+};
 
- //Objects
- var jane = john;
- jane.name = "Jane";
- console.log(john);
+//Objects
+var jane = john;
+jane.name = "Jane";
+console.log(john);
 
- //functions
- var age = 27;
+//functions
+var age = 27;
 
- function change(a, b){
+function change(a, b) {
   a = 30;
   b.job = "CEO";
- }
- change(age, john);
- console.log(age, john);
+}
+change(age, john);
+console.log(age, john);
 
- //Passing functions as arguments
+//Passing functions as arguments
 
 
- var years = [1991, 2002, 1998, 2011];
+var years = [1991, 2002, 1998, 2011];
 
-  function arrCalc(arr, fn){
-    var arrResult = [];
-    for(var i = 0; i < arr.length; i++){
-      arrResult.push(fn(arr[i]));
-    }
-    return arrResult;
+function arrCalc(arr, fn) {
+  var arrResult = [];
+  for (var i = 0; i < arr.length; i++) {
+    arrResult.push(fn(arr[i]));
   }
+  return arrResult;
+}
 
-  function calculateAge(year){
-    return 2023-year;
-  }
+function calculateAge(year) {
+  return 2023 - year;
+}
 
-  function isFullAge(age){
-    return age >= 18;
-  }
+function isFullAge(age) {
+  return age >= 18;
 
-  function maxHeartRate(age){
-    return Math.round(206.9 - (0.67*age));
-  }
+
+  
+}
+
+function maxHeartRate(age) {
+  return Math.round(206.9 - (0.67 * age));
+}
 
 var ages = arrCalc(years, calculateAge);
 var fullAges = arrCalc(ages, isFullAge);
@@ -107,4 +110,12 @@ console.log(ages, fullAges);
 var heartRates = arrCalc(fullAges, maxHeartRate);
 console.log(heartRates);
 console.log(window.jane);
-window.open("google.com")
+window.open( "google.com" )
+var logs = ["error1", "error2", "error3", "error4", "error5"];
+console.log("Hello World");
+
+for ( var i = 0; i < logs.length; i++ ){
+  console.log(logs[i])
+}
+
+console.log("Hello world")
